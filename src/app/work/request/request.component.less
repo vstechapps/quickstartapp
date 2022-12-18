@@ -1,0 +1,103 @@
+
+
+.steps-container {
+  display: block;
+  width: 100%;
+}
+
+.step.active {
+  background: #eee;
+  border-bottom: 5px solid #eee;
+}
+
+.step-index,
+.step-text {
+  width: 100%;
+  text-align: center;
+}
+
+.step {
+  display: inline-block;
+  position: relative;
+  padding-top: 10px;
+  border-right: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  background: #ccc;
+}
+
+.step.active .step-text {
+  color: teal;
+}
+
+.step-main {
+  background: #eee;
+  border-right: 5px solid #fff;
+}
+
+.step .step-text {
+  margin-top: 10px;
+}
+
+.step-text {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+}
+
+.step-index,
+.step-text {
+  width: 100%;
+  text-align: center;
+}
+
+
+.step.active .step-index .step-circle,
+.step.completed .step-index .step-circle {
+  border: 1px solid teal;
+  background-color: teal;
+  color: #fff;
+}
+
+.step.inactive .step-index .step-circle {
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+}
+
+.step-circle {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  display: inline-block;
+  padding-top: 7px;
+  border-radius: 1em;
+  width: 2em;
+  height: 2em;
+}
+
+label{
+  margin-bottom: 0.2rem;
+  margin-left: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+.error{
+  color: #f61e37;
+  font-size: 12px;
+  margin-bottom: 0;
+  padding-left: 3px;
+}
+
+@media only screen and (max-width: 800px) {
+  .step {
+    min-height: 127px;
+    vertical-align: top;
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  .step-text {
+    font-size: 16px !important;
+  }
+}

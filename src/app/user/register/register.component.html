@@ -1,0 +1,188 @@
+<div class="container mt-3" *ngIf="type=='company'" (keyup)="validate()" (change)="validate()">
+    <div class="image-background"></div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <h2>Company Registration </h2>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <span class="navigation-link" routerLink="/register/consultant">Are you consultant? Register here</span><br/>
+            <span class="navigation-link" routerLink="/login">Already Registered? Login now</span>
+        </div>     
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Company Name<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="companyname" placeholder="Company Name" name="companyname" [(ngModel)]="companyname">
+            <span class="error">{{errors.companyname}}</span>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Industry<span class="text-danger">*</span></label>
+            <select class="form-select" id="industry" name="industry" [(ngModel)]="industry">
+                <option disabled value="">Choose Industry</option>
+                <option *ngFor="let i of industries" [value]="i">{{i}}</option>
+            </select>
+            <span class="error">{{errors.industry}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <label>Company Address<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="address" placeholder="Address" name="address" [(ngModel)]="address">
+            <span class="error">{{errors.address}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Country<span class="text-danger">*</span></label>
+            <select class="form-select" id="country" name="country" disabled [(ngModel)]="country">
+                <option default value="INDIA">INDIA</option>
+            </select>
+            <span class="error">{{errors.country}}</span>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>State<span class="text-danger">*</span></label>
+            <select class="form-select" id="state" name="state" [(ngModel)]="state" (change)="cities=state_city_map[state]">
+                <option disabled value="">Choose State</option>
+                <option *ngFor="let s of states" [value]="s">{{s}}</option>
+            </select>
+            <span class="error">{{errors.state}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>City<span class="text-danger">*</span></label>
+            <select class="form-select" id="city" name="city" [(ngModel)]="city">
+                <option disabled value="">Choose City</option>
+                <option *ngFor="let c of cities" [value]="c">{{c}}</option>
+            </select>
+            <span class="error">{{errors.city}}</span>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Pincode<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="pincode" placeholder="Pincode" name="pincode" [(ngModel)]="pincode">
+            <span class="error">{{errors.pincode}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>User ID<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="username" placeholder="Company Email" name="username" [(ngModel)]="userid">
+            <span class="error">{{errors.userid}}</span>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Contact Number<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="contact" placeholder="XXXXXXXXX" name="contact" [(ngModel)]="contact">
+            <span class="error">{{errors.contact}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Login Password<span class="text-danger">*</span></label>
+            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+            <span class="error">{{errors.password}}</span>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Confirm Password<span class="text-danger">*</span></label>
+            <input type="password" class="form-control" id="cpassword" name="cpassword" [(ngModel)]="cpassword">
+            <span class="error">{{errors.cpassword}}</span>
+        </div>
+    </div>
+    <div class="row place-center mb-3">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <button class="btn btn-primary w-100" (click)="register()" [disabled]="touched && !validated">Register</button>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3" *ngIf="type=='consultant'" (keyup)="validate()" (change)="validate()">
+    <div class="image-background"></div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <h2>Consultant Registration </h2>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <span class="navigation-link" routerLink="/register/company">Are you company? Register here</span><br/>
+            <span class="navigation-link" routerLink="/login">Already Registered? Login now</span>
+        </div>     
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>First Name<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="firstName" placeholder="First Name" name="firstname" [(ngModel)]="firstname">
+            <span class="error">{{errors.firstname}}</span>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Last Name<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="lastName" placeholder="Last Name" name="lastname" [(ngModel)]="lastname">
+            <span class="error">{{errors.lastname}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <label>Address<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="address" placeholder="Address" name="address" [(ngModel)]="address">
+            <span class="error">{{errors.address}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Country<span class="text-danger">*</span></label>
+            <select class="form-select" id="country" name="country" disabled [(ngModel)]="country">
+                <option default value="INDIA">INDIA</option>
+            </select>
+            <span class="error">{{errors.country}}</span>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>State<span class="text-danger">*</span></label>
+            <select class="form-select" id="state" name="state" [(ngModel)]="state" (change)="cities=state_city_map[state]">
+                <option disabled value="">Choose State</option>
+                <option *ngFor="let s of states" [value]="s">{{s}}</option>
+            </select>
+            <span class="error">{{errors.state}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>City<span class="text-danger">*</span></label>
+            <select class="form-select" id="city" name="city" [(ngModel)]="city">
+                <option disabled value="">Choose City</option>
+                <option *ngFor="let c of cities" [value]="c">{{c}}</option>
+            </select>
+            <span class="error">{{errors.city}}</span>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Pincode<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="pincode" placeholder="Pincode" name="pincode" [(ngModel)]="pincode">
+            <span class="error">{{errors.pincode}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>User ID<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="username" placeholder="User Email ID" name="username" [(ngModel)]="userid">
+            <span class="error">{{errors.userid}}</span>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Contact Number<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="contact" placeholder="XXXXXXXXX" name="contact" [(ngModel)]="contact">
+            <span class="error">{{errors.contact}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Login Password<span class="text-danger">*</span></label>
+            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+            <span class="error">{{errors.password}}</span>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <label>Confirm Password<span class="text-danger">*</span></label>
+            <input type="password" class="form-control" id="cpassword" name="cpassword" [(ngModel)]="cpassword">
+            <span class="error">{{errors.cpassword}}</span>
+        </div>
+    </div>
+    <div class="row place-center mb-3">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <button class="btn btn-primary w-100" (click)="register()" [disabled]="touched && !validated">Register</button>
+        </div>
+    </div>
+</div>

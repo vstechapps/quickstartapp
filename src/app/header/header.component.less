@@ -1,0 +1,74 @@
+.mat-toolbar-row, .mat-toolbar-single-row{
+  height:80px;
+  background-color: white;
+  color:black;
+}
+
+.logo{
+  height: 50px;
+  margin-right: 15px;
+}
+
+.title-cap{
+  font-size:35px;
+  color:red;
+}
+
+.title-sm{
+  font-size: 25px;
+  color: teal;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-drawer{
+  min-width: 30%;
+}
+
+.mat-toolbar{
+  box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+}
+
+button{
+  border-bottom: 2px solid transparent;
+  border-radius: 0px;
+  font-weight: 600;
+}
+
+button.active-link{
+  border-bottom:2px solid gold;
+}
+
+router-outlet{
+  margin-top:10px;
+}
+
+.menu-left{
+  font-size:18px;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+.mat-button{
+  line-height: 30px;
+}
+
+@media only screen and (max-width: 500px) {
+
+  .title-cap{
+      font-size: 30px;
+  }
+  .title-sm{
+      font-size: 20px;
+  }
+  .logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+  .mat-button{
+    line-height: 36px;
+  }
+  
+}

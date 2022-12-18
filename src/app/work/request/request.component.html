@@ -1,0 +1,110 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <h2 class="h2">Create Documentation Work</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="steps-container p-0">
+            <div class="step" [ngClass]="{'active':step==1,'completed':step>1}" style="width: 33.3333%;">
+                <div class="step-index"><span class="step-circle">1</span></div>
+                <div class="step-text"> Provide Company Information </div>
+            </div>
+            <div class="step" [ngClass]="{'active':step==2,'completed':step>2,'inactive':step<2}" style="width: 33.3333%;">
+                <div class="step-index"><span class="step-circle">2</span></div>
+                <div class="step-text"> Upload Required Documents </div>
+            </div>
+            <div class="step" [ngClass]="{'active':step==3,'inactive':step<3}" style="width: 33.3333%;">
+                <div class="step-index"><span class="step-circle">3</span></div>
+                <div class="step-text"> Place Order </div>
+            </div>
+        </div>
+        <div class="step-main">
+            <div class="row mt-3 p-3" *ngIf="step==1">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label>Name of Multi National Enterprise (Parent / Reporting Entity)<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyname" name="companyname" [(ngModel)]="companyname">
+                    <span class="error">{{errors.companyname}}</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label>Reporting MNE Country<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyname" name="companyname" [(ngModel)]="companyname">
+                    <span class="error">{{errors.companyname}}</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label>Name of Constituent Entity (Child / Local Entity)<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyname" name="companyname" [(ngModel)]="companyname">
+                    <span class="error">{{errors.companyname}}</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label>Number of Employees<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyname" name="companyname" [(ngModel)]="companyname">
+                    <span class="error">{{errors.companyname}}</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label>Total Revenue<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyname" name="companyname" [(ngModel)]="companyname">
+                    <span class="error">{{errors.companyname}}</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label>Earnings Before Income Tax<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyname" name="companyname" [(ngModel)]="companyname">
+                    <span class="error">{{errors.companyname}}</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label>Income Tax Paid (on Cash Basis)<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyname" name="companyname" [(ngModel)]="companyname">
+                    <span class="error">{{errors.companyname}}</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label>Total Employee Expense<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyname" name="companyname" [(ngModel)]="companyname">
+                    <span class="error">{{errors.companyname}}</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label>Tangible Assets other than Cash and Cash Equivalents<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyname" name="companyname" [(ngModel)]="companyname">
+                    <span class="error">{{errors.companyname}}</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label>Intercompany Payments<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyname" name="companyname" [(ngModel)]="companyname">
+                    <span class="error">{{errors.companyname}}</span>
+                </div>
+            </div>
+            <div class="row mt-3" *ngIf="step==2">
+                <div class="col-12 input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+                <div class="col-12 input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+                <div class="col-12 input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+                <div class="col-12 input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+                <div class="col-12 input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+            </div>
+            <div class="row" *ngIf="step==3">
+                <app-payment></app-payment>
+            </div>
+            <div class="row mt-1 p-3">
+                <div class="col-6">
+                    <button mat-button class="primary" *ngIf="step>1" (click)="previous()">&#x21e6; Previous</button>
+                </div>
+                <div class="col-6 text-end">
+                    <button mat-button class="primary" *ngIf="step<3" (click)="next()">Next &#x21e8;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

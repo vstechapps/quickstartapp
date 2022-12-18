@@ -1,0 +1,22 @@
+<div class="card mat-card p-0">
+    <div class="card-header primary">Quick Start Documentation</div>
+    <div class="card-body">
+        <div class="create-form">
+            <div class="form-floating mt-2">
+                <select class="form-select" id="workorder" name="workorder" [(ngModel)]="type">
+                    <option *ngFor="let t of types" [value]="t.code">{{t.name}}</option>
+                </select>
+                <label for="workorder" class="form-label">Documentation:</label>
+            </div>
+            <div class="form-floating mt-2">
+                <select class="form-select" id="fy" name="fy" [(ngModel)]="year">
+                    <option *ngFor="let y of years" [value]="y">{{y}}</option>
+                </select>
+                <label for="fy" class="form-label">Financial Year:</label>
+            </div>
+            <div class="text-end mt-3">
+                <button mat-button class="primary" (click)="createRequest()">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
