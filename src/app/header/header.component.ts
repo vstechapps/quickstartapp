@@ -38,19 +38,21 @@ export class HeaderComponent implements OnInit {
     let m:Menu[]=[];
     
     if(this.user == undefined){
-      m.push({name:'Register',link:'/register/consultant',class:'active-link',align:"top"});
-      m.push({name:'Login',link:'/login',class:'active-link',align:"top"});
+      //m.push({name:'Register',link:'/register/consultant',class:'active-link',align:"top"});
+      //m.push({name:'Login',link:'/login',class:'active-link',align:"top"});
       m.push({name:'Home',link:'/home',class:'active-link',align:"bottom"});
-      m.push({name:'About Us',link:'/about-us',class:'active-link',align:"bottom"});
-      m.push({name:'Services',link:'/our-services',class:'active-link',align:"bottom"});
-      m.push({name:'Workflow',link:'/workflow',class:'active-link',align:"bottom"});
-      m.push({name:'Contact',link:'/contact-us',class:'active-link',align:"bottom"});
-      m.push({name:'FAQ',link:'/faq',class:'active-link',align:"bottom"});
+      //m.push({name:'About Us',link:'/about-us',class:'active-link',align:"bottom"});
+      m.push({name:'Design',link:'/design',class:'active-link',align:"bottom"});
+      m.push({name:'Develop',link:'/develop',class:'active-link',align:"bottom"});
+      m.push({name:'Deploy',link:'/deploy',class:'active-link',align:"bottom"});
+      //m.push({name:'Workflow',link:'/workflow',class:'active-link',align:"bottom"});
+      //m.push({name:'Contact',link:'/contact-us',class:'active-link',align:"bottom"});
+      //m.push({name:'FAQ',link:'/faq',class:'active-link',align:"bottom"});
     }else{
       m.push({name:this.user.email,link:'/dashboard',class:'active',align:"top"});
       m.push({name:'Dashboard',link:'/dashboard',class:'active-link',align:"bottom"});
       m.push({name:'My Profile',link:'/profile',class:'active-link',align:"bottom"});
-      m.push({name:'My Orders',link:'/orders',class:'active-link',align:"bottom"});
+      //m.push({name:'My Orders',link:'/orders',class:'active-link',align:"bottom"});
       m.push({name:'Logout',link:'/login',class:'active-link',align:"bottom"});
     }
     this.menu=m;
