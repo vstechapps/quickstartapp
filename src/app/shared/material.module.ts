@@ -14,6 +14,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   ],
   exports:[
     MatSidenavModule,MatIconModule,MatToolbarModule,MatTabsModule,MatButtonModule,MatExpansionModule,MatFormFieldModule,
-    MatCardModule,MatSelectModule,MatProgressSpinnerModule,MatStepperModule,MatRadioModule,MatTableModule,MatPaginatorModule
+    MatCardModule,MatSelectModule,MatProgressSpinnerModule,MatStepperModule,MatRadioModule,MatTableModule,MatPaginatorModule,
+    MatDividerModule
   ],
   providers: []
 })

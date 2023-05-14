@@ -19,16 +19,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './user/login/login.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { MaterialModule } from './shared/material.module';
-import { OurServicesComponent } from './home/our-services/our-services.component';
-import { ContactUsComponent } from './home/contact-us/contact-us.component';
-import { FaqComponent } from './home/faq/faq.component';
-import { WorkflowComponent } from './home/workflow/workflow.component';
 import { RegisterComponent } from './user/register/register.component';
-import { SectionCardsComponent } from './home/section-cards/section-cards.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderComponent } from './basic/loader/loader.component';
 import { LoaderInterceptor } from './basic/loader/loader.interceptor';
-import { AboutUsComponent } from './home/about-us/about-us.component';
 import { BannersComponent } from './banners/banners.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 
@@ -43,14 +37,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     InputComponent,
     CardComponent,
     LoginComponent,
-    OurServicesComponent,
-    ContactUsComponent,
-    FaqComponent,
-    WorkflowComponent,
     RegisterComponent,
-    SectionCardsComponent,
     LoaderComponent,
-    AboutUsComponent,
     BannersComponent
   ],
   imports: [
