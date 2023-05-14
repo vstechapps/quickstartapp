@@ -1,11 +1,12 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyC_-QzpiYjm5nZFnekbnStXRcNfpp1C9tA",
-    authDomain: "transfer-pricing-dev.firebaseapp.com",
-    projectId: "transfer-pricing-dev",
-    storageBucket: "transfer-pricing-dev.appspot.com",
-    messagingSenderId: "620960304507",
-    appId: "1:620960304507:web:68b366b199a5a52194c1de"
+    apiKey: "AIzaSyAFWLRFOL-pXs5W-4g9hnv2y44ge746lQU",
+    authDomain: "quickstartapp-dev.firebaseapp.com",
+    projectId: "quickstartapp-dev",
+    storageBucket: "quickstartapp-dev.appspot.com",
+    messagingSenderId: "286571453593",
+    appId: "1:286571453593:web:45fa2c111986275e3fec08",
+    measurementId: "G-E2EKSK00GW"
   }
 };

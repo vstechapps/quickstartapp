@@ -12,6 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatRadioModule} from '@angular/material/radio';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -20,7 +22,7 @@ import {MatRadioModule} from '@angular/material/radio';
   ],
   exports:[
     MatSidenavModule,MatIconModule,MatToolbarModule,MatTabsModule,MatButtonModule,MatExpansionModule,MatFormFieldModule,
-    MatCardModule,MatSelectModule,MatProgressSpinnerModule,MatStepperModule,MatRadioModule
+    MatCardModule,MatSelectModule,MatProgressSpinnerModule,MatStepperModule,MatRadioModule,MatTableModule,MatPaginatorModule
   ],
   providers: []
 })

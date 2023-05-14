@@ -10,11 +10,8 @@ import { FaqComponent } from './home/faq/faq.component';
 import { WorkflowComponent } from './home/workflow/workflow.component';
 import { RegisterComponent } from './user/register/register.component';
 import { AboutUsComponent } from './home/about-us/about-us.component';
-import { RequestComponent } from './work/request/request.component';
-import { PaymentComponent } from './work/payment/payment.component';
-
 const routes: Routes = [
-  { path:'', pathMatch:"full", redirectTo: "home"},
+  { path:'', pathMatch:"full", redirectTo: "dashboard"},
   { path: 'home', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent},
   { path: 'our-services', component: OurServicesComponent},
@@ -25,9 +22,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'work/request', component: RequestComponent},
-  { path: 'payment', component: PaymentComponent}
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

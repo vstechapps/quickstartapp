@@ -29,12 +29,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderComponent } from './basic/loader/loader.component';
 import { LoaderInterceptor } from './basic/loader/loader.interceptor';
 import { AboutUsComponent } from './home/about-us/about-us.component';
-import { QuickStartComponent } from './dashboard/quick-start/quick-start.component';
-import { ActiveWorkComponent } from './dashboard/active-work/active-work.component';
-import { RequestComponent } from './work/request/request.component';
-import { WorkModule } from './work/work.module';
-import { PaymentComponent } from './work/payment/payment.component';
 import { BannersComponent } from './banners/banners.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -55,10 +51,6 @@ import { BannersComponent } from './banners/banners.component';
     SectionCardsComponent,
     LoaderComponent,
     AboutUsComponent,
-    QuickStartComponent,
-    ActiveWorkComponent,
-    RequestComponent,
-    PaymentComponent,
     BannersComponent
   ],
   imports: [
@@ -69,7 +61,8 @@ import { BannersComponent } from './banners/banners.component';
     BrowserAnimationsModule,
     MaterialModule,
     ToastrModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    DashboardModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
