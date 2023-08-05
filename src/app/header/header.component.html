@@ -1,40 +1,11 @@
-<mat-toolbar>
-  <div class="d-none">
-    <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+<div class="c">
+  <div class="row m-0">
+      <div class="position-absolute col-2 p-2 m-1 d-none">
+          <button class="btn btn-default b" (click)="menu=!menu"><i class="material-icons text-light">menu</i></button>
+      </div>
+      <div class="col-12 p-1 text-center">
+          <div class="t">Quick Start App</div>
+      </div>
   </div>
-  <span>
-    <img class="logo" src="assets/icons/qsa.jfif" alt="logo"/>
-  </span>
-  <span>
-    <span class="title-cap">Q</span><span class="title-sm">UICK </span>
-    <span class="title-cap">S</span><span class="title-sm">TART </span>
-    <span class="title-cap">A</span><span class="title-sm">PP</span>
-  </span>
-  <span class="example-spacer"></span>
-  <div class="d-none d-md-block">
-    <div class="row">
-      <div class="col text-end d-inline">
-        <ng-container *ngFor="let m of menu">
-          <button *ngIf="m.align=='top'" mat-button [routerLink]="m.link" routerLinkActive="{{m.class}}" >{{m.name}}</button>
-        </ng-container>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <ng-container *ngFor="let m of menu">
-          <button *ngIf="m.align=='bottom'" mat-button [routerLink]="m.link" routerLinkActive="{{m.class}}" >{{m.name}}</button>
-        </ng-container>
-      </div>
-    </div>
-  </div>
-</mat-toolbar>
-<mat-drawer-container class="example-container" [hasBackdrop]="true" [style.height.px]="contentScreenHeight">
-  <mat-drawer #drawer mode="over">
-    <div style="margin:0 10px">
-      <div *ngFor="let m of menu">
-        <button  *ngIf="m.align=='bottom'" mat-button [routerLink]="m.link" routerLinkActive="{{m.class}}" class="menu-left">{{m.name}}</button>
-      </div>
-    </div>
-  </mat-drawer>
-  <router-outlet></router-outlet>
-</mat-drawer-container>
+</div>
+<app-menu *ngIf="menu" (close)="menu=false"></app-menu>

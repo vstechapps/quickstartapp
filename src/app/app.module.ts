@@ -25,6 +25,7 @@ import { LoaderComponent } from './basic/loader/loader.component';
 import { LoaderInterceptor } from './basic/loader/loader.interceptor';
 import { BannersComponent } from './banners/banners.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     LoginComponent,
     RegisterComponent,
     LoaderComponent,
-    BannersComponent
+    BannersComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
