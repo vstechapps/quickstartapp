@@ -1,0 +1,9 @@
+<div class="tabs my-3 d-flex align-items-center justify-content-around">
+    <button class="btn pointer d-flex align-items-center" [disabled]="tabs.indexOf(tab)==0">
+        <i class="material-icons" (click)="previous()">chevron_left</i>
+    </button>
+    <span class="tab">{{tab}}</span>
+    <button class="btn pointer d-flex align-items-center" [disabled]="tabs.indexOf(tab)==tabs.length-1">
+        <i class="material-icons" (click)="next()">chevron_right</i>
+    </button>
+</div>

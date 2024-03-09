@@ -1,11 +1,11 @@
-<div class="c">
-  <div class="row m-0">
-      <div class="position-absolute col-2 p-2 m-1 d-none">
-          <button class="btn btn-default b" (click)="menu=!menu"><i class="material-icons text-light">menu</i></button>
-      </div>
-      <div class="col-12 p-1 text-center">
-          <div class="t">Quick Start App</div>
-      </div>
-  </div>
+<div class="header">
+    <div class="row">
+        <div class="col-6 title px-3">
+            <span> Design</span>
+        </div>
+        <div class="col-6 d-flex align-items-center justify-content-end">
+            <i class="material-icons m-1">copyright</i>
+            <span>V.V.S.K Chaitanya</span>
+        </div>
+    </div>
 </div>
-<app-menu *ngIf="menu" (close)="menu=false"></app-menu>

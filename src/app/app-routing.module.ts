@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProfileComponent } from './user/profile/profile.component';
-import { LoginComponent } from './user/login/login.component';
-import { RegisterComponent } from './user/register/register.component';
+import { LogoutComponent } from './logout/logout.component';
+import { LoginGuard } from './login.guard';
+
 const routes: Routes = [
-  { path:'', pathMatch:"full", component:HomeComponent},
-  { path: 'home', component: HomeComponent },
-  { path: 'register/:type', component: RegisterComponent},
-  { path: 'login', component: LoginComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'login', component: LoginComponent }
+  {path:"",component:HomeComponent},
+  {path:"home",component:HomeComponent},
+  {path:"login",component:LoginComponent},
+  {path:"logout",component:LogoutComponent},
 ];
 
 @NgModule({

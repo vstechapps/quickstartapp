@@ -1,12 +1,1 @@
-<div class="container mt-3">
-    <div class="row m-2">
-        <mat-card>
-            <mat-card-header>
-              <mat-card-title>My Apps</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <app-apps></app-apps>
-            </mat-card-content>
-          </mat-card>
-    </div>
-</div>
+<app-tabs [tabs]="['Design','Preview','Code']" [(tab)]="tab"></app-tabs>

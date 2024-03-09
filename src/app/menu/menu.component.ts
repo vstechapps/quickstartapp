@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AppService } from '../app.service';
+import { FirestoreService } from '../firestore.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,59 +8,29 @@ import { Router } from '@angular/router';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.less']
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit{
 
   @Output()
-  close = new EventEmitter();
+  close:EventEmitter<boolean> = new EventEmitter();
 
-  active:string="";
+  @Output()
+  action:EventEmitter<string> = new EventEmitter();
 
-  ignoreNextScrollEvent = false;
-
-  constructor(public router:Router){
-    document.addEventListener("scroll",(event)=>this.checkView(event),false);
-
-    this.checkView(null);
+  constructor(public app: AppService,public firestore:FirestoreService, public router: Router){
 
   }
 
-  checkView(event:any){
-    if(this.ignoreNextScrollEvent){
-      this.ignoreNextScrollEvent=false;
-      return;
-    }
-    var views=["app-profile","app-skills","app-experience","app-awards","app-projects","app-library1","app-store"];
-    for(var i in views){
-      var v=views[i];
-      var el = document.getElementsByTagName(v)[0];
-      if(el && this.checkVisible(el)){
-        this.active=v;
-      }
-    }
+  
+  ngOnInit(): void {
   }
 
-  checkVisible(elm:Element) {
-    var rect = elm.getBoundingClientRect();
-    var top = rect.top;
-    var viewHeight = window.innerHeight /2;
-    return top < viewHeight;
+  login(){
+    this.router.navigate(["login"]);
   }
 
-  focus(view:string){
-    let el:Element = document.getElementsByTagName(view)[0];
-    if(el){
-      var rect= el.getBoundingClientRect();
-      var top = rect.top;
-      var pageTop = window.visualViewport?.pageTop
-      if(pageTop){
-        top+=pageTop;
-      }
-      
-      window.scrollTo(rect.left,top-80);
-      
-      this.active=view;
-      setTimeout(()=>this.close.emit(),100);
-    }
+  logout(){
+    this.router.navigate(["logout"]);
   }
 
+  
 }

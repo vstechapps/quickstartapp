@@ -1,11 +1,11 @@
-<div class="c">
-  <div class="row m-0">
-    <div class="d-flex justify-content-center">
-      <div class="d-flex flex-column bd-highlight mb-3">
-        <div class="p-2 bd-highlight"></div>
-        <div class="p-2 bd-highlight">Flex item 2</div>
-        <div class="p-2 bd-highlight">Flex item 3</div>
-      </div>
+<app-header (menu)="menu=true"></app-header>
+<app-menu *ngIf="menu" (close)="menu=false" (action)="perform($event)"></app-menu>
+<div class="node-preview row m-0">
+    <div class="col-12 col-md-3 node table-responsive">
+        <app-node *ngIf="design" [node]="design" (select)="select($event)" [current]="current"></app-node>
     </div>
-  </div>
+    <div class="col-12 col-md-9 node table-responsive" (click)="deselect()">
+        <app-preview [design]="design"></app-preview>
+    </div>
 </div>
+<app-dialog [dialog]="dialog" (action)="perform($event)"></app-dialog>

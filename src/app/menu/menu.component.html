@@ -1,33 +1,43 @@
-<div class="c">
-    <div class="text-end"><i class="material-icons pointer m-2" (click)="close.emit(true)">close</i></div>
-    <div class="m">
-            <div class="pointer" [ngClass]="{'active':active=='app-profile'}" (click)="focus('app-profile')">
-                <i class="material-icons align-middle mx-2">home</i>
-                <span class="align-middle">Home</span>
-            </div>
-            <div class="pointer" [ngClass]="{'active':active=='app-skills'}" (click)="focus('app-skills')">
-                <i class="material-icons align-middle mx-2">equalizer</i>
-                <span class="align-middle">Tech Stack</span>
-            </div>
-            <div class="pointer" [ngClass]="{'active':active=='app-experience'}" (click)="focus('app-experience')">
-                <i class="material-icons align-middle mx-2">trending_up</i>
-                <span class="align-middle">Timeline</span>
-            </div>
-            <div class="pointer" [ngClass]="{'active':active=='app-awards'}" (click)="focus('app-awards')">
-                <i class="material-icons  align-middle mx-2">workspace_premium</i>
-                <span class="align-middle">Awards</span>
-            </div>
-            <div class="pointer" [ngClass]="{'active':active=='app-projects'}" (click)="focus('app-projects')">
-                <i class="material-icons align-middle mx-2">work_history</i>
-                <span class="align-middle">Projects</span>
-            </div>
-            <div class="pointer" [ngClass]="{'active':active=='app-library1'}" (click)="focus('app-library1')">
-                <i class="material-icons  align-middle mx-2">menu_book</i>
-                <span class="align-middle">Library</span>
-            </div>
-            <div class="pointer" [ngClass]="{'active':active=='app-store'}" (click)="focus('app-store')">
-                <i class="material-icons  align-middle mx-2">storefront</i>
-                <span class="align-middle">App Store</span>
-            </div>
+<div class="menu">
+    <div class="mx-3 d-flex flex-column">
+        <div>
+            <i class="material-icons text-light pointer mt-4" (click)="action.emit('add')">add</i>
+        </div>
+        <div  *ngIf="app.current">
+            <i class="material-icons text-light pointer mt-4" (click)="action.emit('edit')">edit</i>
+        </div>
+        <div  *ngIf="app.current">
+            <i class="material-symbols-outlined text-light pointer mt-4" (click)="action.emit('cut')">cut</i>
+        </div>
+        <div *ngIf="app.current">
+            <i class="material-icons text-light pointer mt-4" (click)="action.emit('copy')">content_copy</i>
+        </div>
+        <div *ngIf="app.current && app.paste">
+            <i class="material-icons text-light pointer mt-4" (click)="action.emit('paste')">content_paste</i>
+        </div>
+        <div *ngIf="app.design">
+            <i class="material-icons text-light pointer mt-4" (click)="action.emit('preview')">preview</i>
+        </div>
+        <div *ngIf="!app.design">
+            <i class="material-icons text-light pointer mt-4" (click)="action.emit('upload')">upload</i>
+        </div>
+        <div *ngIf="app.design">
+            <i class="material-icons text-light pointer mt-4" (click)="action.emit('download')">download</i>
+        </div>
+        <div *ngIf="firestore.user && !app.design">
+            <i class="material-icons text-light pointer mt-4" (click)="action.emit('load')">folder_open</i>
+        </div>
+        <div *ngIf="firestore.user && app.design">
+            <i class="material-icons text-light pointer mt-4" (click)="action.emit('save')">save</i>
+        </div>
+        <div *ngIf="app.current">
+            <i class="material-icons text-danger pointer mt-4" (click)="action.emit('delete')">delete</i>
+        </div>
+        <div *ngIf="!firestore.user">
+            <i class="material-icons text-light pointer mt-4" (click)="login()">login</i>
+        </div>
+        <div *ngIf="firestore.user">
+            <i class="material-icons text-light pointer mt-4" (click)="logout()">logout</i>
+        </div>
     </div>
 </div>
