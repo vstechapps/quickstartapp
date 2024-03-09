@@ -1,2 +1,2 @@
 # QuickStartApp
-Easily Start Building Application
+Qucick Start Building Application
